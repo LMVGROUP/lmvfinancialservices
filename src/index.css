@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LMV Financial Services Design System
+   Brand Colors:
+   - Primary Blue: #3AA0D6 (197 64% 53%)
+   - Secondary Blue: #479ED0 (200 58% 55%)
+   - Slate Blue-Grey: #688FA4 (204 25% 53%)
+   - Dark Charcoal: #2B292A (0 2% 16%)
+   - Neutral Grey: #5F5E5E (0 1% 37%)
+   - White: #FEFEFE (0 0% 100%)
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 2% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 2% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 2% 16%;
+
+    --primary: 197 64% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 58% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 0 1% 37%;
+
+    --accent: 204 25% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 197 64% 53%;
+
+    --radius: 0.5rem;
+
+    /* Custom LMV tokens */
+    --charcoal: 0 2% 16%;
+    --neutral-grey: 0 1% 37%;
+    --slate-blue: 204 25% 53%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 2% 16%;
+    --sidebar-primary: 197 64% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 0 2% 16%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 197 64% 53%;
+  }
+
+  .dark {
+    --background: 0 2% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 2% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 2% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 197 64% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 58% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 2% 20%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 204 25% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 2% 25%;
+    --input: 0 2% 25%;
+    --ring: 197 64% 53%;
+
+    --charcoal: 0 0% 90%;
+    --neutral-grey: 0 0% 70%;
+    --slate-blue: 204 25% 60%;
+
+    --sidebar-background: 0 2% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 197 64% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 2% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 2% 25%;
+    --sidebar-ring: 197 64% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Roboto', 'Open Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .container-section {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .link-underline {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
