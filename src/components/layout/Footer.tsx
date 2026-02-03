@@ -123,16 +123,16 @@ const Footer = () => {
                   className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-primary transition-colors"
                 >
                   <Phone className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>+91 91001 08918</span>
+                  <span>04040060770</span>
                 </a>
               </li>
               <li>
                 <a 
-                  href="mailto:leelamanoj@lmvfs.in" 
+                  href="mailto:admin.hr@lmvfs.in" 
                   className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-primary transition-colors"
                 >
                   <Mail className="h-4 w-4 mt-0.5 shrink-0" />
-                  <span>leelamanoj@lmvfs.in</span>
+                  <span>admin.hr@lmvfs.in</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-primary-foreground/70">
