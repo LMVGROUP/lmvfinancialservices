@@ -1,8 +1,22 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, TrendingUp, Users, Globe, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useAggregatedStats } from '@/hooks/useLoanStats';
+import { useBanks } from '@/hooks/useBanks';
+
+const formatCurrency = (amount: number) => {
+  const crores = amount / 10000000;
+  return `₹${crores.toFixed(1)}Cr+`;
+};
 
 const Hero = () => {
+  const { data: stats, isLoading: statsLoading } = useAggregatedStats();
+  const { data: banks, isLoading: banksLoading } = useBanks();
+
+  const totalDisbursed = stats?.totalDisbursedAmount || 0;
+  const happyCustomers = stats?.totalDisbursed || 0;
+  const partnerBanks = banks?.length || 0;
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       {/* Background Pattern */}
@@ -65,19 +79,25 @@ const Hero = () => {
             <div className="grid grid-cols-2 gap-4 lg:gap-6 animate-fade-in-up">
               <div className="p-6 rounded-2xl bg-card border border-border shadow-lg card-hover">
                 <TrendingUp className="h-10 w-10 text-primary mb-4" />
-                <div className="text-3xl font-bold text-foreground">₹52.8Cr+</div>
+                <div className="text-3xl font-bold text-foreground">
+                  {statsLoading ? '...' : formatCurrency(totalDisbursed)}
+                </div>
                 <p className="text-muted-foreground text-sm mt-1">Total Disbursed</p>
               </div>
               
               <div className="p-6 rounded-2xl bg-card border border-border shadow-lg card-hover">
                 <Users className="h-10 w-10 text-primary mb-4" />
-                <div className="text-3xl font-bold text-foreground">3,394+</div>
+                <div className="text-3xl font-bold text-foreground">
+                  {statsLoading ? '...' : `${happyCustomers.toLocaleString()}+`}
+                </div>
                 <p className="text-muted-foreground text-sm mt-1">Happy Customers</p>
               </div>
               
               <div className="p-6 rounded-2xl bg-card border border-border shadow-lg card-hover">
                 <Shield className="h-10 w-10 text-primary mb-4" />
-                <div className="text-3xl font-bold text-foreground">39+</div>
+                <div className="text-3xl font-bold text-foreground">
+                  {banksLoading ? '...' : `${partnerBanks}+`}
+                </div>
                 <p className="text-muted-foreground text-sm mt-1">Partner Banks</p>
               </div>
               
