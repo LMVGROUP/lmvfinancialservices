@@ -10,6 +10,7 @@ const navLinks = [
   { name: 'Services', path: '/services' },
   { name: 'Why Choose Us', path: '/why-choose-us' },
   { name: 'EMI Calculator', path: '/emi-calculator' },
+  { name: 'Career', path: '/fs-careers' },
   { name: 'Contact', path: '/contact' },
 ];
 

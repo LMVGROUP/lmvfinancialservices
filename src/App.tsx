@@ -13,6 +13,7 @@ import EMICalculator from "./pages/EMICalculator";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import FSCareers from "./pages/FSCareers";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/why-choose-us" element={<WhyChooseUs />} />
             <Route path="/contact" element={<Contact />} />
+             <Route path="/fs-careers" element={<FSCareers />} />
             <Route path="/emi-calculator" element={<EMICalculator />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
